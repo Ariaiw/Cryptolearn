@@ -1,47 +1,50 @@
-# Cryptolearn 🛡️
-**A Comprehensive Roadmap to Mastering Modern Cryptography**
+# 🦉 Cryptolearn | The Advanced Security Roadmap
 
-Welcome to **Cryptolearn**, an open-source educational repository dedicated to demystifying the world of cryptography. This project serves as a structured path for students, developers, and security enthusiasts to journey from the basics of ancient ciphers to the complexities of post-quantum security.
+**Cryptolearn** is a professional-grade, browser-based cryptographic suite designed to demystify the complex world of digital security. Built for developers and curious minds, it bridges the gap between theoretical mathematics and practical implementation.
 
----
 
-## 📖 Overview
-Cryptography is the backbone of digital privacy and blockchain technology. This repository provides a deep dive into the mathematical foundations and practical applications of cryptographic protocols, documented primarily in Persian to support the local developer community.
 
 ---
 
-## 🚀 What's Inside?
+## 🚀 Features
 
-### 1. 🧮 Mathematical Foundations
-* Number Theory (Prime numbers, Modular arithmetic)
-* Discrete Logarithms
-* Elliptic Curve Theory (ECC)
+- **SHA-256 HMAC Engine**: Generate and verify digital fingerprints with secret-key salting.
+- **AES-256 GCM Suite**: Industry-standard authenticated encryption and decryption.
+- **RSA Key Architect**: Generate 2048-bit industrial-grade public/private key pairs locally.
+- **Privacy First**: 100% Client-side. No servers, no tracking, no logs.
+- **Educational Roadmap**: Integrated guides for Integrity, Confidentiality, and Authenticity.
 
-### 2. 🔐 Symmetric Key Cryptography
-* Block Ciphers (AES, DES)
-* Stream Ciphers (ChaCha20)
-* Modes of Operation (CBC, GCM, etc.)
+## 🛠 Tech Stack
 
-### 3. 🔑 Asymmetric Key Cryptography (PKI)
-* RSA (Rivest–Shamir–Adleman)
-* Diffie-Hellman Key Exchange
-* Digital Signature Algorithms (DSA, ECDSA)
-
-### 4. ⚡ Hashing & Integrity
-* Message Digest (MD5 - for historical context)
-* Secure Hash Algorithms (SHA-2, SHA-3)
-* HMAC (Hash-based Message Authentication Code)
-
-### 5. 🌐 Advanced Topics
-* Zero-Knowledge Proofs (ZKP)
-* Post-Quantum Cryptography (PQC)
-* Public Key Infrastructure (PKI) & Certificates
+* **Logic**: Pure JavaScript (Web Crypto API)
+* **Styling**: Modern CSS3 with CSS Variables (Dark Mode Optimized)
+* **Security**: PBKDF2 for key derivation, AES-GCM for encryption, SHA-256 for integrity.
 
 ---
 
-## 🛠️ How to Use This Roadmap
-This is a **documentation-first** project. To get started:
+## 📖 How to Use
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Ariaiw/Cryptolearn.git](https://github.com/Ariaiw/Cryptolearn.git)
+1.  **Clone the Repo**:
+    ```bash
+    git clone [https://github.com/Ariaiw/Cryptolearn.git](https://github.com/Ariaiw/Cryptolearn.git)
+    ```
+2.  **Open in Browser**: Just open `index.html`. No dependencies or servers required.
+3.  **Explore**: Use the **Suite** to encrypt messages or verify hashes. Click the `?` icons to learn the "Why" behind the "How".
+
+
+
+## 🛡 Security Philosophy
+
+The core principle of this project is **Zero-Trust**. By using the browser's native `crypto.subtle` interface, all sensitive operations occur in a volatile memory space that clears upon tab closure. 
+
+> "Cryptography is not about hiding information, it's about making sure the right people have it."
+
+---
+
+## 👤 Author
+
+Developed with ⚡ by **Ariaiw** 🦉
+*Part of an open initiative to make web security accessible to everyone.*
+
+---
+License: MIT
