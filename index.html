@@ -3,377 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cryptolearn | Understand Cryptography</title>
+    <title>Cryptolearn | Extreme Security Suite</title>
     <style>
         :root {
-            /* Palette - Dark, calm, academic */
-            --bg-body: #0f172a;       /* Deep slate */
-            --bg-card: #1e293b;       /* Lighter slate */
-            --text-main: #e2e8f0;     /* Soft white */
-            --text-muted: #94a3b8;    /* Muted grey */
-            --accent: #2dd4bf;        /* Teal/Cyan - Represents logic/security */
-            --accent-hover: #14b8a6;
-            --code-bg: #000000;
-            
-            /* Spacing & Type */
-            --max-width: 800px;
-            --radius: 8px;
-            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            --bg-body: #0a0f1d;
+            --bg-card: #161e31;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent: #2dd4bf;
+            --accent-dark: #14b8a6;
+            --danger: #fb7185;
+            --success: #4ade80;
+            --font-mono: "Fira Code", monospace;
+            --max-width: 1100px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.2s; }
-        ul { list-style: none; }
-
-        /* --- Layout Utility --- */
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- Header --- */
-        header {
-            padding: 40px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: -0.5px;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--bg-body); color: var(--text-main); font-family: -apple-system, sans-serif; line-height: 1.6; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+        
+        /* Navigation */
+        header { padding: 25px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; background: rgba(10, 15, 29, 0.9); backdrop-filter: blur(10px); z-index: 100; }
+        .logo { font-weight: 800; font-size: 1.6rem; letter-spacing: -1px; }
         .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .btn-nav { background: var(--accent); color: #000 !important; padding: 10px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; }
 
-        nav ul { display: flex; gap: 24px; }
-        nav a { font-size: 0.9rem; color: var(--text-muted); }
-        nav a:hover { color: var(--accent); }
+        /* Hero & Philosophy */
+        .hero { padding: 100px 0 50px; text-align: center; }
+        h1 { font-size: 4rem; letter-spacing: -3px; margin-bottom: 20px; line-height: 0.9; }
+        .hero p { color: var(--text-muted); font-size: 1.3rem; max-width: 800px; margin: 0 auto 40px; }
 
-        /* --- Hero Section --- */
-        .hero {
-            padding: 80px 0 60px;
-            border-bottom: 1px solid #334155;
-        }
+        .philosophy { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 80px 0; border-top: 1px solid #1e293b; }
+        .phil-item h3 { color: var(--accent); font-family: var(--font-mono); font-size: 1rem; margin-bottom: 15px; text-transform: uppercase; }
+        .phil-item p { font-size: 1.1rem; color: var(--text-muted); }
 
-        h1 {
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
+        /* Roadmaps */
+        .section-title { margin: 60px 0 40px; font-size: 2.5rem; letter-spacing: -1px; text-align: center; }
+        .roadmap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 80px; }
+        .card { background: var(--bg-card); padding: 40px; border-radius: 16px; border: 1px solid #2d3748; transition: 0.4s; position: relative; overflow: hidden; }
+        .card:hover { border-color: var(--accent); transform: translateY(-10px); background: #1e293b; }
+        .card h3 { margin-bottom: 15px; color: var(--accent); font-size: 1.5rem; }
+        .card p { color: var(--text-muted); font-size: 1rem; }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-        }
+        /* --- THE SUITE --- */
+        .suite-box { background: var(--bg-card); border: 1px solid #2d3748; border-radius: 20px; overflow: hidden; margin: 40px 0 100px; box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
+        .tabs { display: flex; background: #0f172a; border-bottom: 1px solid #2d3748; }
+        .tab-btn { flex: 1; padding: 22px; border: none; background: transparent; color: var(--text-muted); cursor: pointer; font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
+        .tab-btn.active { color: var(--accent); background: var(--bg-card); box-shadow: inset 0 -3px 0 var(--accent); }
 
-        /* --- Philosophy Section --- */
-        .philosophy {
-            padding: 60px 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
+        .content-area { padding: 50px; }
+        .tab-content { display: none; animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .tab-content.active { display: block; }
 
-        .phil-item h3 { margin-bottom: 10px; color: var(--accent); font-family: var(--font-mono); font-size: 1rem; }
-        .phil-item p { color: var(--text-muted); font-size: 0.95rem; }
+        .badge-bar { background: rgba(45, 212, 191, 0.05); border: 1px dashed var(--accent); color: var(--accent); padding: 15px; border-radius: 10px; font-size: 0.9rem; margin-bottom: 40px; text-align: center; font-family: var(--font-mono); }
 
-        /* --- Concepts Grid --- */
-        .concepts-section { padding: 40px 0 80px; }
-        .section-title { margin-bottom: 30px; font-size: 1.5rem; }
+        /* Interface Layout */
+        .panel { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        label { display: flex; justify-content: space-between; color: var(--text-muted); font-size: 0.8rem; margin-bottom: 12px; font-family: var(--font-mono); font-weight: 600; }
+        .help-btn { cursor: help; background: #334155; width: 18px; height: 18px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; color: #fff; }
+        
+        textarea, input { width: 100%; background: #0a0f1d !important; border: 1px solid #334155; color: #fff; padding: 18px; border-radius: 10px; font-family: var(--font-mono); margin-bottom: 20px; font-size: 0.95rem; transition: 0.3s; }
+        textarea:focus, input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 15px rgba(45, 212, 191, 0.1); }
+        
+        .result-box { background: #000; border: 1px solid #1e293b; padding: 25px; border-radius: 10px; min-height: 160px; font-family: var(--font-mono); color: var(--accent); font-size: 0.9rem; word-break: break-all; position: relative; }
+        
+        .action-group { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .btn { background: var(--accent); color: #000; border: none; padding: 18px; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono); }
+        .btn-alt { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn:hover { background: var(--accent-dark); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .btn-alt:hover { background: rgba(45, 212, 191, 0.1); }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
+        .tip-box { background: #1e293b; padding: 20px; border-radius: 10px; margin-bottom: 20px; font-size: 0.9rem; border-left: 4px solid var(--accent); display: none; line-height: 1.5; }
 
-        .card {
-            background: var(--bg-card);
-            padding: 24px;
-            border-radius: var(--radius);
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-        }
+        /* Footer Owl */
+        footer { text-align: center; padding: 100px 0 50px; border-top: 1px solid #1e293b; }
+        .owl-sign { font-size: 3.5rem; display: block; margin-bottom: 15px; filter: drop-shadow(0 0 10px var(--accent)); }
+        .author { font-family: var(--font-mono); font-weight: 900; font-size: 1.5rem; letter-spacing: 6px; color: var(--text-main); text-transform: uppercase; }
+        .sub-footer { margin-top: 20px; color: var(--text-muted); font-size: 0.85rem; }
 
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        .card-icon {
-            font-family: var(--font-mono);
-            color: var(--accent);
-            margin-bottom: 16px;
-            display: block;
-            font-size: 0.9rem;
-        }
-
-        .card h3 { margin-bottom: 12px; font-size: 1.2rem; }
-        .card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; }
-
-        .code-snippet {
-            background: var(--code-bg);
-            padding: 12px;
-            border-radius: 4px;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: #a5b4fc;
-            overflow-x: auto;
-            margin-bottom: 16px;
-        }
-
-        .card-link {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-main);
-            border-bottom: 1px solid var(--accent);
-            padding-bottom: 2px;
-        }
-
-        /* --- CTA Section --- */
-        .cta {
-            text-align: center;
-            padding: 80px 0;
-            background: rgba(45, 212, 191, 0.05); /* Very subtle tint */
-            border-radius: var(--radius);
-            margin-bottom: 60px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: #0f172a;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-        .btn:hover { background: var(--accent-hover); }
-
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid #334155;
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .philosophy { grid-template-columns: 1fr; }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 850px) { .panel, .philosophy { grid-template-columns: 1fr; } h1 { font-size: 3rem; } }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div class="logo">Crypto<span>learn</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#philosophy">Philosophy</a></li>
-                    <li><a href="#concepts">Concepts</a></li>
-                    <li><a href="https://github.com/Ariaiw/Cryptolearn">GitHub</a></li>
-                </ul>
-            </nav>
-        </header>
+<div class="container">
+    <header>
+        <div class="logo">Crypto<span>learn</span></div>
+        <div class="nav-links">
+            <a href="#roadmaps" style="color: var(--text-muted); text-decoration: none;">Roadmaps</a>
+            <a href="https://github.com/Ariaiw" style="color: var(--text-muted); text-decoration: none;">GitHub</a>
+            <a href="#suite" class="btn-nav">Launch Pro Suite</a>
+        </div>
+    </header>
 
-        <section class="hero">
-            <h1>Cryptography,<br>Demystified.</h1>
-            <p>An open-source roadmap to understanding the mathematics and logic that secure the digital world. No hype, just concepts.</p>
-        </section>
+    <section class="hero">
+        <h1>Advanced Encryption<br>& Logic Suite</h1>
+        <p>A professional-grade educational environment to explore the unbreakable laws of modern cryptography. Private by default. Secure by design.</p>
+    </section>
 
-        <section id="philosophy" class="philosophy">
-            <div class="phil-item">
-                <h3>// UNDERSTAND, DON'T MEMORIZE</h3>
-                <p>Cryptography isn't about memorizing API calls. It's about understanding number theory, probability, and adversarial thinking.</p>
+    <section class="philosophy">
+        <div class="phil-item">
+            <h3>// The Knowledge Path</h3>
+            <p>From the simplicity of hashing to the complexity of Elliptic Curves. We provide the tools to visualize how math protects your data.</p>
+        </div>
+        <div class="phil-item">
+            <h3>// Absolute Privacy</h3>
+            <p>No backend, no cookies, no tracking. Every operation is computed within your browser's V8 engine instance. Your secrets never leave your sight.</p>
+        </div>
+    </section>
+
+    <div id="roadmaps">
+        <h2 class="section-title">The Learning Roadmap</h2>
+        <div class="roadmap-grid">
+            <div class="card">
+                <h3>01. Integrity</h3>
+                <p>Digital fingerprints using SHA-256. Learn how to verify that not a single bit has been changed in transit.</p>
             </div>
-            <div class="phil-item">
-                <h3>// CODE OVER THEORY</h3>
-                <p>Mathematical proofs are essential, but seeing the implementation in Python or C++ makes the abstract concrete.</p>
+            <div class="card">
+                <h3>02. Confidentiality</h3>
+                <p>Symmetric protocols like AES-256 GCM. The ultimate way to lock data with a master password.</p>
             </div>
-        </section>
-
-        <section id="concepts" class="concepts-section">
-            <h2 class="section-title">Core Concepts</h2>
-            <div class="grid">
-                
-                <article class="card">
-                    <span class="card-icon">01. SYMMETRIC</span>
-                    <h3>The Shared Secret</h3>
-                    <p>How two parties communicate securely using a single key. From Caesar Cipher to AES.</p>
-                    <div class="code-snippet">
-cipher = AES.new(key, AES.MODE_EAX)
-ciphertext, tag = cipher.encrypt(data)
-                    </div>
-                    <a href="https://github.com/Ariaiw/Cryptolearn" class="card-link">Explore AES &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <span class="card-icon">02. ASYMMETRIC</span>
-                    <h3>Public Key Infrastructure</h3>
-                    <p>The magic of RSA and Elliptic Curves. How we establish trust over an insecure channel.</p>
-                    <div class="code-snippet">
-n = p * q
-phi = (p-1) * (q-1)
-e = 65537
-                    </div>
-                    <a href="https://github.com/Ariaiw/Cryptolearn" class="card-link">Explore RSA &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <span class="card-icon">03. INTEGRITY</span>
-                    <h3>One-Way Functions</h3>
-                    <p>Understanding Hash functions (SHA-256). Ensuring data hasn't been tampered with.</p>
-                    <div class="code-snippet">
-hash = hashlib.sha256(b"hello")
-print(hash.hexdigest())
-                    </div>
-                    <a href="https://github.com/Ariaiw/Cryptolearn" class="card-link">Explore Hashing &rarr;</a>
-                </article>
-
+            <div class="card">
+                <h3>03. Authentication</h3>
+                <p>Public-Key infrastructure (RSA). Proving identity and exchanging keys without pre-shared secrets.</p>
             </div>
-        </section>
-
-        <section class="cta">
-            <h2>Ready to dive deep?</h2>
-            <p style="color: var(--text-muted); margin-top: 10px;">The complete roadmap, mathematics, and code are open source.</p>
-            <a href="https://github.com/Ariaiw/Cryptolearn" class="btn">Start Learning on GitHub</a>
-        </section>
-
-        <footer>
-            <p>Cryptolearn is an open-source educational initiative.</p>
-            <p style="margin-top: 8px;">&copy; 2023 Ariaiw | Distributed under MIT License</p>
-        </footer>
+        </div>
     </div>
-<section class="lab-section">
-            <h2 class="section-title">Try it: The Caesar Cipher</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">
-                Experience the oldest form of cryptography. Shift the alphabet to hide your message.
-                <br><strong>Key + Algorithm = Ciphertext.</strong>
-            </p>
 
-            <div class="lab-container">
-                <div class="lab-controls">
-                    <label>1. Enter Message:</label>
-                    <input type="text" id="plainInput" placeholder="Hello World" value="Cryptolearn">
-                    
-                    <label>2. Set Shift Key (Offset): <span id="shiftValue" style="color: var(--accent);">3</span></label>
-                    <input type="range" id="shiftRange" min="1" max="25" value="3">
-                </div>
+    <div class="badge-bar">🔒 LOCAL INSTANCE ACTIVE: High-Entropy Randomness Source Detected</div>
 
-                <div class="lab-output">
-                    <label>3. Encrypted Result:</label>
-                    <div class="output-box" id="cipherOutput">FUBSWROHDUQ</div>
+    <div class="suite-box" id="suite">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'pane-hash')">Secure Hash (HMAC)</button>
+            <button class="tab-btn" onclick="switchTab(event, 'pane-aes')">AES-256 GCM</button>
+            <button class="tab-btn" onclick="switchTab(event, 'pane-rsa')">RSA Keypair</button>
+        </div>
+
+        <div class="content-area">
+            
+            <div id="pane-hash" class="tab-content active">
+                <div class="panel">
+                    <div>
+                        <label>Secret Key (Salt) <span class="help-btn" onclick="toggleTip('tip-h')">?</span></label>
+                        <input type="password" id="h-key" placeholder="Optional secret for HMAC...">
+                        
+                        <label>Message / Data to Hash</label>
+                        <textarea id="h-input" rows="4" placeholder="Enter message..."></textarea>
+                        
+                        <div class="action-group">
+                            <button class="btn" onclick="generateHash()">✨ Generate Hash</button>
+                            <button class="btn btn-alt" onclick="verifyHash()">🔍 Verify Match</button>
+                        </div>
+                        <div id="tip-h" class="tip-box">
+                            <strong>HMAC (Hash-based Message Authentication Code):</strong> By adding a secret key, you ensure the hash cannot be reproduced by an attacker who doesn't know the key.
+                        </div>
+                    </div>
+                    <div>
+                        <label>SHA-256 Output</label>
+                        <div class="result-box" id="h-result">Enter data to begin...</div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <style>
-            .lab-section {
-                padding: 60px 0;
-                border-top: 1px solid #334155;
-            }
-            
-            .lab-container {
-                background: #111;
-                border: 1px solid #334155;
-                border-radius: var(--radius);
-                padding: 24px;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-                align-items: center;
-            }
+            <div id="pane-aes" class="tab-content">
+                <div class="panel">
+                    <div>
+                        <label>Master Password <span class="help-btn" onclick="toggleTip('tip-s')">?</span></label>
+                        <input type="password" id="s-pass" placeholder="Enter secure password...">
+                        
+                        <label>Message / Ciphertext</label>
+                        <textarea id="s-input" rows="4" placeholder="Message to encrypt or Base64 to decrypt..."></textarea>
+                        
+                        <div class="action-group">
+                            <button class="btn" onclick="encryptAES()">🔒 Encrypt</button>
+                            <button class="btn btn-alt" onclick="decryptAES()">🔓 Decrypt</button>
+                        </div>
+                        <div id="tip-s" class="tip-box">
+                            <strong>AES-GCM:</strong> This is an 'Authenticated Encryption' mode. It provides both secrecy and a guarantee that the ciphertext hasn't been tampered with.
+                        </div>
+                    </div>
+                    <div>
+                        <label>Status & Result</label>
+                        <div class="result-box" id="s-result">Waiting for action...</div>
+                    </div>
+                </div>
+            </div>
 
-            .lab-controls label {
-                display: block;
-                font-size: 0.9rem;
-                color: var(--text-muted);
-                margin-bottom: 8px;
-                font-family: var(--font-mono);
-            }
+            <div id="pane-rsa" class="tab-content">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <button class="btn" style="width: auto; padding: 18px 60px;" onclick="generateRSA()">⚡ Generate Industrial-Grade 2048-bit RSA Pair</button>
+                </div>
+                <div class="panel">
+                    <div>
+                        <label>Public Key (X.509 / SPKI)</label>
+                        <div class="result-box" id="r-pub" style="font-size: 0.75rem; overflow-y: auto;"></div>
+                    </div>
+                    <div>
+                        <label>Private Key (PKCS#8)</label>
+                        <div class="result-box" id="r-priv" style="font-size: 0.75rem; color: var(--danger); border-left: 4px solid var(--danger); overflow-y: auto;"></div>
+                    </div>
+                </div>
+            </div>
 
-            .lab-controls input[type="text"] {
-                width: 100%;
-                background: var(--bg-body);
-                border: 1px solid #334155;
-                color: var(--text-main);
-                padding: 12px;
-                border-radius: 4px;
-                margin-bottom: 20px;
-                font-family: var(--font-mono);
-            }
+        </div>
+    </div>
 
-            .lab-controls input[type="text"]:focus {
-                outline: none;
-                border-color: var(--accent);
-            }
+    <footer>
+        <span class="owl-sign">🦉</span>
+        <div class="author">Ariaiw</div>
+        <div class="sub-footer">
+            &copy; 2026 Cryptolearn Initiative. Pure Logic. No Tracking.
+        </div>
+    </footer>
+</div>
 
-            .lab-controls input[type="range"] {
-                width: 100%;
-                accent-color: var(--accent);
-            }
+<script>
+    // UI Logic
+    function switchTab(e, id) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        e.currentTarget.classList.add('active');
+    }
 
-            .output-box {
-                background: #0f172a;
-                border: 1px dashed var(--accent);
-                color: var(--accent);
-                padding: 20px;
-                border-radius: 4px;
-                font-family: var(--font-mono);
-                font-size: 1.2rem;
-                word-break: break-all;
-                min-height: 80px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-            }
+    function toggleTip(id) {
+        const el = document.getElementById(id);
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
 
-            @media (max-width: 600px) {
-                .lab-container { grid-template-columns: 1fr; }
-            }
-        </style>
+    // --- HASH LOGIC ---
+    async function generateHash() {
+        const msg = document.getElementById('h-input').value;
+        const key = document.getElementById('h-key').value;
+        const combined = new TextEncoder().encode(key + msg);
+        const hashBuf = await crypto.subtle.digest('SHA-256', combined);
+        const hashHex = Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2, '0')).join('');
+        document.getElementById('h-result').style.color = "var(--accent)";
+        document.getElementById('h-result').textContent = hashHex;
+    }
 
-        <script>
-            const input = document.getElementById('plainInput');
-            const range = document.getElementById('shiftRange');
-            const output = document.getElementById('cipherOutput');
-            const shiftValDisplay = document.getElementById('shiftValue');
+    async function verifyHash() {
+        const msg = document.getElementById('h-input').value;
+        const key = document.getElementById('h-key').value;
+        const existingHash = prompt("Paste the hash to verify against:");
+        if(!existingHash) return;
 
-            function caesarCipher(str, shift) {
-                return str.replace(/[a-zA-Z]/g, function(c) {
-                    const base = c >= 'a' ? 97 : 65;
-                    return String.fromCharCode(((c.charCodeAt(0) - base + parseInt(shift)) % 26) + base);
-                });
-            }
+        const combined = new TextEncoder().encode(key + msg);
+        const hashBuf = await crypto.subtle.digest('SHA-256', combined);
+        const currentHash = Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2, '0')).join('');
 
-            function update() {
-                const text = input.value;
-                const shift = range.value;
-                shiftValDisplay.textContent = shift;
-                output.textContent = caesarCipher(text, shift);
-            }
+        const resBox = document.getElementById('h-result');
+        if(currentHash === existingHash.trim()) {
+            resBox.style.color = "var(--success)";
+            resBox.textContent = "✅ MATCH CONFIRMED: The data and secret key produce this exact hash.";
+        } else {
+            resBox.style.color = "var(--danger)";
+            resBox.textContent = "❌ VERIFICATION FAILED: Data or key do not match the provided hash.";
+        }
+    }
 
-            input.addEventListener('input', update);
-            range.addEventListener('input', update);
-        </script>
+    // --- AES LOGIC ---
+    async function deriveKey(pass) {
+        const enc = new TextEncoder();
+        const material = await crypto.subtle.importKey("raw", enc.encode(pass.padEnd(32, '0')), "PBKDF2", false, ["deriveKey"]);
+        return await crypto.subtle.deriveKey(
+            { name: "PBKDF2", salt: enc.encode("ariaiw-secure-salt"), iterations: 100000, hash: "SHA-256" },
+            material, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]
+        );
+    }
+
+    async function encryptAES() {
+        const pass = document.getElementById('s-pass').value;
+        const msg = document.getElementById('s-input').value;
+        const resBox = document.getElementById('s-result');
+        if(!pass || !msg) return alert("Password and message required.");
+
+        try {
+            const key = await deriveKey(pass);
+            const iv = crypto.getRandomValues(new Uint8Array(12));
+            const ct = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, key, new TextEncoder().encode(msg));
+            const combined = new Uint8Array(iv.length + ct.byteLength);
+            combined.set(iv); combined.set(new Uint8Array(ct), iv.length);
+            resBox.style.color = "var(--accent)";
+            resBox.textContent = btoa(String.fromCharCode(...combined));
+        } catch(e) { resBox.textContent = "Encryption Error."; }
+    }
+
+    async function decryptAES() {
+        const pass = document.getElementById('s-pass').value;
+        const b64 = document.getElementById('s-input').value;
+        const resBox = document.getElementById('s-result');
+        if(!pass || !b64) return alert("Password and encrypted text required.");
+
+        try {
+            const key = await deriveKey(pass);
+            const data = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+            const iv = data.slice(0, 12);
+            const ct = data.slice(12);
+            const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, ct);
+            resBox.style.color = "var(--success)";
+            resBox.textContent = "🔓 DECRYPTED MESSAGE:\n" + new TextDecoder().decode(pt);
+        } catch(e) { 
+            resBox.style.color = "var(--danger)";
+            resBox.textContent = "❌ DECRYPTION FAILED: Invalid password or corrupted ciphertext.";
+        }
+    }
+
+    // --- RSA LOGIC ---
+    async function generateRSA() {
+        const pubBox = document.getElementById('r-pub');
+        const privBox = document.getElementById('r-priv');
+        pubBox.textContent = "Generating Primes..."; privBox.textContent = "Computing Modulus...";
+
+        const pair = await crypto.subtle.generateKey(
+            { name: "RSA-OAEP", modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]), hash: "SHA-256" },
+            true, ["encrypt", "decrypt"]
+        );
+        const pub = await crypto.subtle.exportKey("spki", pair.publicKey);
+        const priv = await crypto.subtle.exportKey("pkcs8", pair.privateKey);
+        
+        const toPem = (b, t) => `-----BEGIN ${t}-----\n${btoa(String.fromCharCode(...new Uint8Array(b))).match(/.{1,64}/g).join('\n')}\n-----END ${t}-----`;
+        pubBox.textContent = toPem(pub, "PUBLIC KEY");
+        privBox.textContent = toPem(priv, "PRIVATE KEY");
+    }
+</script>
+
 </body>
 </html>
