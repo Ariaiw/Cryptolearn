@@ -1,20 +1,51 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Cryptolearn
 
-# Run and deploy your AI Studio app
+Cryptolearn is an interactive, web-based educational project designed to make core cryptography concepts easier to understand through clear explanations, visual structure, and practical examples.
 
-This contains everything you need to run your app locally.
+The goal of this project is not to turn users into cryptographers overnight, but to help them build correct mental models about how modern cryptography works and why it matters.
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+---
 
-## Run Locally
+## ✨ Features
 
-**Prerequisites:**  Node.js
+- Clear explanations of fundamental cryptography concepts
+- Beginner-friendly structure with progressive learning flow
+- Focus on *how* and *why*, not just definitions
+- Clean, minimal UI optimized for reading and learning
+- Runs entirely in the browser (no backend required)
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 📚 Topics Covered
+
+- Basic cryptography concepts
+- Hash functions and their properties
+- Symmetric vs asymmetric encryption
+- Public and private keys
+- Real-world use cases and common misconceptions
+- Security principles and limitations
+
+> The content is educational and conceptual. It does not promote insecure practices or homemade cryptography.
+
+---
+
+## 🛠️ Tech Stack
+
+- HTML – Structure and content
+- CSS – Layout and visual clarity
+- JavaScript – Interactivity and explanations logic
+- GitHub Pages – Deployment and hosting
+
+No frameworks, no heavy dependencies — simple, transparent, and easy to audit.
+
+---
+
+## 🚀 Live Demo
+
+You can view the live version here:
+
+👉 https://ariaiw.github.io/Cryptolearn/
+
+---
+
+## 📁 Project Structure
