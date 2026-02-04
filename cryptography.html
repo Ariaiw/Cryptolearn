@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptolearn | Understand Cryptography</title>
+    <style>
+        :root {
+            /* Palette - Dark, calm, academic */
+            --bg-body: #0f172a;       /* Deep slate */
+            --bg-card: #1e293b;       /* Lighter slate */
+            --text-main: #e2e8f0;     /* Soft white */
+            --text-muted: #94a3b8;    /* Muted grey */
+            --accent: #2dd4bf;        /* Teal/Cyan - Represents logic/security */
+            --accent-hover: #14b8a6;
+            --code-bg: #000000;
+            
+            /* Spacing & Type */
+            --max-width: 800px;
+            --radius: 8px;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        ul { list-style: none; }
+
+        /* --- Layout Utility --- */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--accent); }
+
+        nav ul { display: flex; gap: 24px; }
+        nav a { font-size: 0.9rem; color: var(--text-muted); }
+        nav a:hover { color: var(--accent); }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 80px 0 60px;
+            border-bottom: 1px solid #334155;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+        }
+
+        /* --- Philosophy Section --- */
+        .philosophy {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .phil-item h3 { margin-bottom: 10px; color: var(--accent); font-family: var(--font-mono); font-size: 1rem; }
+        .phil-item p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* --- Concepts Grid --- */
+        .concepts-section { padding: 40px 0 80px; }
+        .section-title { margin-bottom: 30px; font-size: 1.5rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: var(--radius);
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .card-icon {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            margin-bottom: 16px;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .card h3 { margin-bottom: 12px; font-size: 1.2rem; }
+        .card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; }
+
+        .code-snippet {
+            background: var(--code-bg);
+            padding: 12px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #a5b4fc;
+            overflow-x: auto;
+            margin-bottom: 16px;
+        }
+
+        .card-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+        }
+
+        /* --- CTA Section --- */
+        .cta {
+            text-align: center;
+            padding: 80px 0;
+            background: rgba(45, 212, 191, 0.05); /* Very subtle tint */
+            border-radius: var(--radius);
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #0f172a;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .btn:hover { background: var(--accent-hover); }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid #334155;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .philosophy { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">Crypto<span>learn</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#philosophy">Philosophy</a></li>
+                    <li><a href="#concepts">Concepts</a></li>
+                    <li><a href="https://github.com/Ariaiw/Cryptolearn">GitHub</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Cryptography,<br>Demystified.</h1>
+            <p>An open-source roadmap to understanding the mathematics and logic that secure the digital world. No hype, just concepts.</p>
+        </section>
+
+        <section id="philosophy" class="philosophy">
+            <div class="phil-item">
+                <h3>// UNDERSTAND, DON'T MEMORIZE</h3>
+                <p>Cryptography isn't about memorizing API calls. It's about understanding number theory, probability, and adversarial thinking.</p>
+            </div>
+            <div class="phil-item">
+                <h3>// CODE OVER THEORY</h3>
+                <p>Mathematical proofs are essential, but seeing the implementation in Python or C++ makes the abstract concrete.</p>
+            </div>
+        </section>
+
+        <section id="concepts" class="concepts-section">
+            <h2 class="section-title">Core Concepts</h2>
+            <div class="grid">
+                
+                <article class="card">
+                    <span class="card-icon">01. SYMMETRIC</span>
+                    <h3>The Shared Secret</h3>
+                    <p>How two parties communicate securely using a single key. From Caesar Cipher to AES.</p>
+                    <div class="code-snippet">
+cipher = AES.new(key, AES.MODE_EAX)
+ciphertext, tag = cipher.encrypt(data)
+                    </div>
+                    <a href="https://github.com/Ariaiw/Cryptolearn" class="card-link">Explore AES &rarr;</a>
+                </article>
+
+                <article class="card">
+                    <span class="card-icon">02. ASYMMETRIC</span>
+                    <h3>Public Key Infrastructure</h3>
+                    <p>The magic of RSA and Elliptic Curves. How we establish trust over an insecure channel.</p>
+                    <div class="code-snippet">
+n = p * q
+phi = (p-1) * (q-1)
+e = 65537
+                    </div>
+                    <a href="https://github.com/Ariaiw/Cryptolearn" class="card-link">Explore RSA &rarr;</a>
+                </article>
+
+                <article class="card">
+                    <span class="card-icon">03. INTEGRITY</span>
+                    <h3>One-Way Functions</h3>
+                    <p>Understanding Hash functions (SHA-256). Ensuring data hasn't been tampered with.</p>
+                    <div class="code-snippet">
+hash = hashlib.sha256(b"hello")
+print(hash.hexdigest())
+                    </div>
+                    <a href="https://github.com/Ariaiw/Cryptolearn" class="card-link">Explore Hashing &rarr;</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>Ready to dive deep?</h2>
+            <p style="color: var(--text-muted); margin-top: 10px;">The complete roadmap, mathematics, and code are open source.</p>
+            <a href="https://github.com/Ariaiw/Cryptolearn" class="btn">Start Learning on GitHub</a>
+        </section>
+
+        <footer>
+            <p>Cryptolearn is an open-source educational initiative.</p>
+            <p style="margin-top: 8px;">&copy; 2023 Ariaiw | Distributed under MIT License</p>
+        </footer>
+    </div>
+
+</body>
+</html>
