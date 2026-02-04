@@ -262,6 +262,118 @@ print(hash.hexdigest())
             <p style="margin-top: 8px;">&copy; 2023 Ariaiw | Distributed under MIT License</p>
         </footer>
     </div>
+<section class="lab-section">
+            <h2 class="section-title">Try it: The Caesar Cipher</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">
+                Experience the oldest form of cryptography. Shift the alphabet to hide your message.
+                <br><strong>Key + Algorithm = Ciphertext.</strong>
+            </p>
 
+            <div class="lab-container">
+                <div class="lab-controls">
+                    <label>1. Enter Message:</label>
+                    <input type="text" id="plainInput" placeholder="Hello World" value="Cryptolearn">
+                    
+                    <label>2. Set Shift Key (Offset): <span id="shiftValue" style="color: var(--accent);">3</span></label>
+                    <input type="range" id="shiftRange" min="1" max="25" value="3">
+                </div>
+
+                <div class="lab-output">
+                    <label>3. Encrypted Result:</label>
+                    <div class="output-box" id="cipherOutput">FUBSWROHDUQ</div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .lab-section {
+                padding: 60px 0;
+                border-top: 1px solid #334155;
+            }
+            
+            .lab-container {
+                background: #111;
+                border: 1px solid #334155;
+                border-radius: var(--radius);
+                padding: 24px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .lab-controls label {
+                display: block;
+                font-size: 0.9rem;
+                color: var(--text-muted);
+                margin-bottom: 8px;
+                font-family: var(--font-mono);
+            }
+
+            .lab-controls input[type="text"] {
+                width: 100%;
+                background: var(--bg-body);
+                border: 1px solid #334155;
+                color: var(--text-main);
+                padding: 12px;
+                border-radius: 4px;
+                margin-bottom: 20px;
+                font-family: var(--font-mono);
+            }
+
+            .lab-controls input[type="text"]:focus {
+                outline: none;
+                border-color: var(--accent);
+            }
+
+            .lab-controls input[type="range"] {
+                width: 100%;
+                accent-color: var(--accent);
+            }
+
+            .output-box {
+                background: #0f172a;
+                border: 1px dashed var(--accent);
+                color: var(--accent);
+                padding: 20px;
+                border-radius: 4px;
+                font-family: var(--font-mono);
+                font-size: 1.2rem;
+                word-break: break-all;
+                min-height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            @media (max-width: 600px) {
+                .lab-container { grid-template-columns: 1fr; }
+            }
+        </style>
+
+        <script>
+            const input = document.getElementById('plainInput');
+            const range = document.getElementById('shiftRange');
+            const output = document.getElementById('cipherOutput');
+            const shiftValDisplay = document.getElementById('shiftValue');
+
+            function caesarCipher(str, shift) {
+                return str.replace(/[a-zA-Z]/g, function(c) {
+                    const base = c >= 'a' ? 97 : 65;
+                    return String.fromCharCode(((c.charCodeAt(0) - base + parseInt(shift)) % 26) + base);
+                });
+            }
+
+            function update() {
+                const text = input.value;
+                const shift = range.value;
+                shiftValDisplay.textContent = shift;
+                output.textContent = caesarCipher(text, shift);
+            }
+
+            input.addEventListener('input', update);
+            range.addEventListener('input', update);
+        </script>
 </body>
 </html>
