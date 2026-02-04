@@ -1,51 +1,47 @@
-# Cryptolearn
+# Cryptolearn 🛡️
+**A Comprehensive Roadmap to Mastering Modern Cryptography**
 
-Cryptolearn is an interactive, web-based educational project designed to make core cryptography concepts easier to understand through clear explanations, visual structure, and practical examples.
-
-The goal of this project is not to turn users into cryptographers overnight, but to help them build correct mental models about how modern cryptography works and why it matters.
-
----
-
-## ✨ Features
-
-- Clear explanations of fundamental cryptography concepts
-- Beginner-friendly structure with progressive learning flow
-- Focus on *how* and *why*, not just definitions
-- Clean, minimal UI optimized for reading and learning
-- Runs entirely in the browser (no backend required)
+Welcome to **Cryptolearn**, an open-source educational repository dedicated to demystifying the world of cryptography. This project serves as a structured path for students, developers, and security enthusiasts to journey from the basics of ancient ciphers to the complexities of post-quantum security.
 
 ---
 
-## 📚 Topics Covered
-
-- Basic cryptography concepts
-- Hash functions and their properties
-- Symmetric vs asymmetric encryption
-- Public and private keys
-- Real-world use cases and common misconceptions
-- Security principles and limitations
-
-> The content is educational and conceptual. It does not promote insecure practices or homemade cryptography.
+## 📖 Overview
+Cryptography is the backbone of digital privacy and blockchain technology. This repository provides a deep dive into the mathematical foundations and practical applications of cryptographic protocols, documented primarily in Persian to support the local developer community.
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 What's Inside?
 
-- HTML – Structure and content
-- CSS – Layout and visual clarity
-- JavaScript – Interactivity and explanations logic
-- GitHub Pages – Deployment and hosting
+### 1. 🧮 Mathematical Foundations
+* Number Theory (Prime numbers, Modular arithmetic)
+* Discrete Logarithms
+* Elliptic Curve Theory (ECC)
 
-No frameworks, no heavy dependencies — simple, transparent, and easy to audit.
+### 2. 🔐 Symmetric Key Cryptography
+* Block Ciphers (AES, DES)
+* Stream Ciphers (ChaCha20)
+* Modes of Operation (CBC, GCM, etc.)
+
+### 3. 🔑 Asymmetric Key Cryptography (PKI)
+* RSA (Rivest–Shamir–Adleman)
+* Diffie-Hellman Key Exchange
+* Digital Signature Algorithms (DSA, ECDSA)
+
+### 4. ⚡ Hashing & Integrity
+* Message Digest (MD5 - for historical context)
+* Secure Hash Algorithms (SHA-2, SHA-3)
+* HMAC (Hash-based Message Authentication Code)
+
+### 5. 🌐 Advanced Topics
+* Zero-Knowledge Proofs (ZKP)
+* Post-Quantum Cryptography (PQC)
+* Public Key Infrastructure (PKI) & Certificates
 
 ---
 
-## 🚀 Live Demo
+## 🛠️ How to Use This Roadmap
+This is a **documentation-first** project. To get started:
 
-You can view the live version here:
-
-👉 https://ariaiw.github.io/Cryptolearn/
-
----
-
-## 📁 Project Structure
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Ariaiw/Cryptolearn.git](https://github.com/Ariaiw/Cryptolearn.git)
